@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boggle</title>
+  </head>
+  <body>
+    <h1>Welcome to the Boggle APP!</h1>
+    <div class="boggle">
+      <table class="board">
+        {% for row in board %}
+        <tr>
+          {% for cell in row %}
+          <td>{{cell}}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+
+      <p
+        >High Score:
+        <b>{{ highscore }}</b>
+        in {{ nplays }} plays
+      </p>
+
+      <p> Score: <b class="score">0</b> Seconds Left: <b class="timer"></b> </p>
+
+      <p class="msg"> </p>
+
+      <ul class="words"> </ul>
+
+      <form class="add-word" method="POST">
+        <input type="text" name="word" id="word" />
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
